@@ -1,0 +1,11 @@
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/dawnrichardson/.gitignore_global
+[push]
+	default = current
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
