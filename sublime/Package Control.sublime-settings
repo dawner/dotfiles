@@ -1,0 +1,30 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"auto-save",
+		"Better CoffeeScript",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorPicker",
+		"EditorConfig",
+		"Elixir",
+		"Emmet",
+		"GitGutter",
+		"Indent XML",
+		"Material Theme",
+		"Monokai JSON+",
+		"Package Control",
+		"Pretty JSON",
+		"SCSS",
+		"SideBarEnhancements",
+		"SublimeERB",
+		"SublimeLinter",
+		"Tomorrow Color Schemes",
+		"TrailingSpaces"
+	]
+}
