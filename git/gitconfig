@@ -9,3 +9,5 @@
 	br = branch
 	ci = commit
 	st = status
+	pt = log --graph --pretty=oneline --abbrev-commit
+
