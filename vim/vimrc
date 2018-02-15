@@ -21,6 +21,8 @@ set autoread
 set tabstop=2
 set shiftwidth=2
 set expandtab "Use spaces even when tab key is used (Ctrl-V<Tab> will insert tab)
+set hlsearch
+set incsearch
 let mapleader = " "
 let g:netrw_liststyle=3
 "Change cursor when in insert mode
