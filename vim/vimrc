@@ -8,6 +8,7 @@ Plug 'rking/ag.vim'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
 Plug 'fatih/vim-go'
 Plug 'thoughtbot/pick.vim'
@@ -59,7 +60,7 @@ map <Leader>n :NERDTreeToggle<CR>
 "Start Nerdtree automatically when vim starts
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
-"Start Nerdtree with `vim` command (rather than having to do `vim .`
+"Start Nerdtree with `vim` command (rather than having to do `vim .`)
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
