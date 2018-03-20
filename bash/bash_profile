@@ -7,3 +7,9 @@ export EDITOR="vim"
 # Setup Autojump ("j" command)
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+alias dc="docker-compose"
+alias dce="docker-compose exec"
+alias groot='cd $(git rev-parse --show-toplevel)'
+
+# Shortcuts to open Terraform deployment files. Usage: vtf <dev | accp>
+vtf () { vim ./infra/non-prod/$1/services/${PWD##*/}/terraform.tfvars; }
