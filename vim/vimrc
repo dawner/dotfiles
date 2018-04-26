@@ -45,6 +45,10 @@ endif
 "Highlight white space in red at the end of a line, except when typing
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
+
+"Remove extra space on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 map <Leader>d :%s/\s\+$//<cr>
 map <Leader>= gg=G
 map <Leader>. <c-w>>
@@ -61,6 +65,4 @@ let NERDTreeShowLineNumbers=1
 "Start Nerdtree when no file is specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
