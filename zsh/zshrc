@@ -1,9 +1,5 @@
 export EDITOR="vim"
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # Setup Autojump ("j" command)
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -16,7 +12,6 @@ alias gpl='git checkout $(git branch | cut -c 3- | pick)'
 # Magic to pick a git branch (all: remote + local)
 alias gpa='git checkout $(git branch -a | sed "s/remotes\/origin\///" | sort | uniq | pick)'
 
-# Shortcuts to open Terraform deployment files. Usage: vtf <dev | accp>
-vtf () { vim ./infra/non-prod/$1/services/${PWD##*/}/terraform.tfvars; }
-
-
+# Enable Chruby (Ruby Version Manager) & autoload current ruby version when cd to new project
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh

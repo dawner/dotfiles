@@ -1,0 +1,2 @@
+# Add cams aws tools to PATH https://github.com/camfowler/aws-tools
+export PATH="$PATH:$HOME/Projects/aws-tools/bin/"
