@@ -1,17 +1,47 @@
 export EDITOR="vim"
 
-# Setup Autojump ("j" command)
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# --- OS ---
+alias ctc='gnome-control-center'
+alias nt='nautilus'
 
-alias dc="docker-compose"
-alias dce="docker-compose exec"
+# --- Git ---
+# Navigate to root of a git project
 alias groot='cd $(git rev-parse --show-toplevel)'
-
 # Magic to pick a git branch (local)
 alias gpl='git checkout $(git branch | cut -c 3- | pick)'
 # Magic to pick a git branch (all: remote + local)
 alias gpa='git checkout $(git branch -a | sed "s/remotes\/origin\///" | sort | uniq | pick)'
 
-# Enable Chruby (Ruby Version Manager) & autoload current ruby version when cd to new project
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# --- Docker ---
+alias dc="docker-compose"
+alias dce="docker-compose exec"
+alias dls="docker ps"
+alias drm="docker rm"
+
+# --- DevOps ---
+alias tf='terraform'
+# Exec cmds on a k8 pod eg kssh pod/sidekiq-default-xxxxx sh
+alias ke='kubectl exec -it -n default'
+alias kl='kubectl logs'
+alias kd='kubectl describe pod'
+
+# --- Dev tools ---
+alias ca='codeclimate analyze'
+
+# --- Postgres ---
+alias pgstart='systemctl start postgresql.service'
+alias pgstop='systemctl stop postgresql.service'
+alias pgst='systemctl status postgresql.service'
+
+# --- Ruby ---
+alias be='bundle exec'
+alias bi='bundle install'
+
+# If available, enable Chruby (Ruby Version Manager) & autoload current ruby version when cd to new project
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
+    source /usr/local/share/chruby/chruby.sh
+    source /usr/local/share/chruby/auto.sh
+fi
+
+# If available, setup Autojump ("j" command)
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

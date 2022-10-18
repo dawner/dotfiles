@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: zsh/zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Install submodules]
+  - description: Installing oh-my-zsh
+    command: $([[ -d "$HOME/.oh-my-zsh" ]] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc)
+  - description: Installing zsh-autosuggestions
+    command: repo=https://github.com/zsh-users/zsh-autosuggestions &&
+      target=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
+      git clone $repo $target ||
+      git -C $target pull
+  - description: Installing zsh-syntax-highlighting
+    command: repo=https://github.com/zsh-users/zsh-syntax-highlighting &&
+      target=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
+      git clone $repo $target ||
+      git -C $target pull
