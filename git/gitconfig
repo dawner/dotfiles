@@ -1,9 +1,14 @@
+[user]
+	name = Dawn Richardson
+	email = dawner.fr@gmail.com
 [color]
 	ui = true
 [core]
 	excludesfile = /Users/dawnrichardson/.gitignore_global
 [push]
 	default = current
+[pull]
+	ff = only
 [alias]
 	co = checkout
 	br = branch
