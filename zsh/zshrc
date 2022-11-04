@@ -44,4 +44,5 @@ if [ -f /usr/local/share/chruby/chruby.sh ]; then
 fi
 
 # If available, setup Autojump ("j" command)
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh # Linux
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh # OSX
