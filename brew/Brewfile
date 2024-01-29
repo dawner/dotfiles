@@ -1,0 +1,17 @@
+tap "homebrew/cask"
+
+# Cask Packages
+cask "visual-studio-code"
+cask "docker"
+cask "dbeaver-community"
+cask "tunnelblick"
+
+# Brew Packages
+brew "ca-certificates" # for netskope in devcontainers
+brew "kubernetes-cli"
+brew "awscli"
+brew "git"
+brew "gh" # Github CLI
+brew "docker-compose"
+brew "commitizen"
+brew "autojump"
