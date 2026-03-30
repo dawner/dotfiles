@@ -37,12 +37,5 @@ alias pgst='systemctl status postgresql.service'
 alias be='bundle exec'
 alias bi='bundle install'
 
-# If available, enable Chruby (Ruby Version Manager) & autoload current ruby version when cd to new project
-if [ -f /usr/local/share/chruby/chruby.sh ]; then
-    source /usr/local/share/chruby/chruby.sh
-    source /usr/local/share/chruby/auto.sh
-fi
-
 # If available, setup Autojump ("j" command)
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh # Linux
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh # OSX

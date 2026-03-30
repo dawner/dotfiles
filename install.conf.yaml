@@ -5,13 +5,15 @@
 - clean: ["~"]
 
 - link:
-    ~/.zshrc: zsh/zshrc
+    ~/.zshrc.personal: zsh/zshrc.personal
     ~/.zshenv: zsh/zshenv
     ~/.gitconfig: git/gitconfig
     ~/Brewfile: brew/Brewfile
 
 - shell:
     - [git submodule update --init --recursive, Install submodules]
+    - description: Source .zshrc.personal from .zshrc
+      command: grep -qF 'source ~/.zshrc.personal' ~/.zshrc 2>/dev/null || printf '\n# Add Dawn'\''s personal terminal config from dotfiles\n[[ -f ~/.zshrc.personal ]] && source ~/.zshrc.personal\n' >> ~/.zshrc
     - description: Installing zsh-autosuggestions
       command: repo=https://github.com/zsh-users/zsh-autosuggestions &&
         target=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
